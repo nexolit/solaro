@@ -9,7 +9,11 @@ Only the color was changed.
 
 ## Installing
 Get into the root directory of the project and run:
-```npm install```
+```console
+npm install
+```
 ## Running
 To host a local server run:
-```npm run dev```
+```console
+npm run dev
+```
