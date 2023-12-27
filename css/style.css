@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
 h1 {
-    color: var(--logo_color);
+    color: var(--secondary_color);
+    margin-bottom: 40px;
+}
+#switch {
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    top: 2vh;
+    width: 5vh;
+    height: 5vh;
+    background-color: #2323238c;
+
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    padding: 2vh 1vw;
 }
 body {
     font-family: 'Fira Code', monospace;
     --main_color: white;
-    --logo_color: black;
+    --secondary_color: black;
     
     background-color: var(--main_color);
+    transition: background-color 0.5s ease;
+
     height: 100%;
     margin: 0;
 }
@@ -51,7 +67,7 @@ main {
 
     padding: 5px 5px;
 
-    color: var(--main_color);
+    color: white;
     background-color: #2323238c;
     border-radius: 10%;
 }
@@ -73,6 +89,12 @@ nav ul {
     width: 90%;
     padding-left: 0;
     list-style-type: none;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        --main_color: black;
+        --secondary_color: white;
+    }
 }
 @media (orientation: portrait) {
     nav {
