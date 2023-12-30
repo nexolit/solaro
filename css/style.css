@@ -98,9 +98,9 @@ nav ul {
 }
 @media (orientation: portrait) {
     nav {
-        width: 30%;
-        flex-direction: row;
-        justify-content: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
 
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -112,5 +112,16 @@ nav ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
+    }
+    .icon {
+        margin: 2px 20px;
+    }
+    #renderer {
+        margin-left: 5%;
+        width: 95%;
+    }
+    .tooltip {
+        left: 5vw;
+        bottom: 9vh;
     }
 }
