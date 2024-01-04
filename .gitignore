@@ -23,5 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-#Unused old versions of code
+# Unused old versions of code
 old
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
