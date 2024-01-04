@@ -19,7 +19,7 @@ if (darkModeEnabled) {
 } else {
     switchButton.src = "images/moon.svg"
 }
-switchButton.addEventListener('click', function (e) {
+switchButton.addEventListener('click', function () {
     wasClicked = true
     switchMode()
 })
