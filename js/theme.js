@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { scene } from "./canvas";
+import { scene } from "./canvas"
 
 const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
 let darkModeEnabled = darkMode.matches
@@ -11,7 +11,7 @@ darkMode.addEventListener('change', function (e) {
     } else if (!e.matches && darkModeEnabled) {
         switchMode()
     }
-});
+})
 
 const switchButton = document.getElementById("switch")
 if (darkModeEnabled) {

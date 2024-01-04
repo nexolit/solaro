@@ -1,9 +1,8 @@
 // Import the necessary Three.js components
 import * as THREE from 'three'
 
-import './canvas'
-import './theme'
 import { renderer, camera, scene } from './canvas'
+import './theme'
 import Camera from './camera'
 
 export const mainCamera = new Camera(renderer, camera, scene)
@@ -28,15 +27,15 @@ function addPoint(x, y) {
 }
 
 function drawGrid() {
-    const size = 100;
-    const divisions = size;
+    const size = 100
+    const divisions = size
 
-    const grid = new THREE.GridHelper(size, divisions);
+    const grid = new THREE.GridHelper(size, divisions)
 
-    grid.rotation.x = Math.PI / 2;
+    grid.rotation.x = Math.PI / 2
     grid.position.z = 0
 
-    scene.add(grid);
+    scene.add(grid)
 }
 
 drawGrid()

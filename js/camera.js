@@ -11,7 +11,7 @@ export default class Camera {
         this.scene = scene
 
         // Bind the animate method to the current instance
-        this.animate = this.animate.bind(this);
+        this.animate = this.animate.bind(this)
 
         // Add event listeners for mouse and touch interactions
         renderer.domElement.addEventListener('mousedown', Controls.onMouseDown)
