@@ -1,11 +1,18 @@
 // Import the necessary Three.js components
 import * as THREE from 'three'
 
-import { renderer, camera, scene } from './canvas'
+import { renderer, camera, scene, webGLEnabled } from './canvas'
 import './theme'
 import Camera from './camera'
 
-export const mainCamera = new Camera(renderer, camera, scene)
+export let mainCamera = undefined
+
+if(webGLEnabled) {
+    mainCamera = new Camera(renderer, camera, scene)
+
+    drawGrid()
+    fetchData()
+}
 
 //Fetch the data and do a for loop
 function fetchData() {
@@ -37,6 +44,3 @@ function drawGrid() {
 
     scene.add(grid)
 }
-
-drawGrid()
-fetchData()

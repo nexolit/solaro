@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { scene } from "./canvas"
+import { scene, webGLEnabled } from "./canvas"
 
 const darkMode = window.matchMedia('(prefers-color-scheme: dark)')
 let darkModeEnabled = darkMode.matches
@@ -43,6 +43,6 @@ function switchMode() {
         bodyStyle.setProperty("--secondary_color", main_color)
         bodyStyle.setProperty("--main_color", secondary_color)
 
-        scene.background = new THREE.Color(secondary_color) // not main because we switched them
+        if(webGLEnabled) scene.background = new THREE.Color(secondary_color) // not main because we switched them
     }
 }
