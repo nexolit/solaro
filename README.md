@@ -1,9 +1,16 @@
 # Solaro
-A smart solar vacuum cleaner made with Microbit.
+A smart solar vacuum cleaner made with the BBC micro:bit.
 
-This is the repo contains the code of it's website interface.
+This is repo contains the code of it's website interface.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/19c93236-1dc4-488e-b360-a150186ccd92/deploy-status)](https://app.netlify.com/sites/solaro/deploys)
+![Netlify Status](https://api.netlify.com/api/v1/badges/19c93236-1dc4-488e-b360-a150186ccd92/deploy-status)
+[![Tests](https://github.com/nexolit/Solaro/actions/workflows/tests.yml/badge.svg?branch=dev)](https://github.com/nexolit/Solaro/actions/workflows/tests.yml)
+
+![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=black&color=FFEA00)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
+[![BBC micro:bit](./badge/microbit.gif)](https://microbit.org/)
 
 ## Resources
 Icons used are from [Google Fonts](https://fonts.google.com/icons), and are under [Apache 2 license](./LICENSE).
@@ -11,11 +18,11 @@ Only the color was changed.
 
 ## Installing
 Get into the root directory of the project and run:
-```console
+```bash
 npm install
 ```
 ## Running
 To host a local server run:
-```console
+```bash
 npm run dev
 ```
