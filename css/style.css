@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
 h1 {
     color: var(--secondary_color);
-    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-bottom: 80px;
+    margin-left: 20px;
 }
 .rect {
     position: fixed;
@@ -126,6 +128,9 @@ nav ul {
     }
 }
 @media (orientation: portrait) {
+    h1 {
+        margin-bottom: 3vh;
+    }
     .rect {
         width: 20%;
         height: 200%;
