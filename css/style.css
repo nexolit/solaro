@@ -1,7 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
 h1 {
     color: var(--secondary_color);
-    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+}
+.rect {
+    position: fixed;
+    top: -25%;
+    width: 10%;
+    height: 140%;
+    rotate: 30deg;
+    z-index: -1;
+}
+.blue {
+    background-color: var(--blue);
+}
+.light_blue {
+    left: 10%;
+    background-color: var(--light_blue);
+}
+.light_green {
+    left: 20%;
+    background-color: var(--light_green);
+}
+.green {
+    left: 30%;
+    background-color: var(--green);
 }
 #switch {
     cursor: pointer;
@@ -19,7 +44,13 @@ h1 {
 body {
     font-family: 'Fira Code', monospace;
     --main_color: white;
-    --secondary_color: black;
+    --secondary_color: var(--midnight_blue);
+    
+    --light_blue: #3498db;
+    --blue: #2980b9;
+    --midnight_blue: #000420;
+    --light_green: #2ecc71;
+    --green: #27ae60;
     
     background-color: var(--main_color);
     transition: background-color 0.5s ease;
@@ -32,7 +63,7 @@ main {
     align-items: center;
 }
 #renderer {
-    border: 1px solid blue;
+    border: 1px solid var(--secondary_color);
     margin-right: 5%;
     margin-left: 15%;
     height: 70vh;
@@ -92,11 +123,30 @@ nav ul {
 }
 @media (prefers-color-scheme: dark) {
     body {
-        --main_color: black;
+        --main_color: var(--midnight_blue);
         --secondary_color: white;
     }
 }
 @media (orientation: portrait) {
+    h1 {
+        margin-bottom: 3vh;
+    }
+    .rect {
+        width: 20%;
+        height: 200%;
+    }
+    .blue {
+        left: -50%;
+    }
+    .light_blue {
+        left: -30%;
+    }
+    .light_green {
+        left: -10%;
+    }
+    .green {
+        left: 10%;
+    }
     nav {
         margin-left: 10%;
         margin-right: 10%;
