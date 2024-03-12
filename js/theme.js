@@ -26,14 +26,12 @@ switchButton.addEventListener('click', function () {
 })
 
 if (localStorage.getItem("theme") == "dark" && !darkModeEnabled) {
-    console.log("was run")
     wasLoaded = true
     switchMode()
     wasLoaded = false
 }
 
 function switchMode() {
-    console.log("switched mode")
     if (!darkModeEnabled) {
         switchButton.src = "images/sun.svg"
         darkModeEnabled = true
