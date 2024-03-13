@@ -1,0 +1,24 @@
+.showcase_text {
+    font-size: x-large;
+    width: 25%;
+}
+.showcase_img {
+    margin-left: 18vw;
+    clip-path: ellipse(65% 90% at 35% 90%);
+
+    width: 60vh;
+    height: auto;
+}
+@media (orientation: portrait) {
+    main {
+        flex-direction: column;
+    }
+    .showcase_img {
+        margin: 0;
+        width: 30vh;
+    }
+    .showcase_text {
+        font-size: medium;
+        width: 80%;
+    }
+}

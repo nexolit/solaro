@@ -5,7 +5,7 @@ const container = document.getElementById('renderer')
 let renderer, scene, camera = undefined
 let webGLEnabled = false
 
-if ( WebGL.isWebGLAvailable() ) {
+if (WebGL.isWebGLAvailable() && container != null) {
     renderer = new THREE.WebGLRenderer()
     container.appendChild(renderer.domElement)
 	webGLEnabled = true
@@ -20,7 +20,7 @@ if ( WebGL.isWebGLAvailable() ) {
     scene.background = new THREE.Color(getComputedStyle(document.body).getPropertyValue("--main_color"))
     renderer.setSize(width, height)
     renderer.setPixelRatio(window.devicePixelRatio)    
-} else {
+} else if(container != null) {
 	const warning = WebGL.getWebGLErrorMessage()
 	container.appendChild(warning)
 }

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
-h1 {
+#title {
     color: var(--secondary_color);
     margin-top: 25px;
     margin-bottom: 80px;
@@ -52,6 +52,7 @@ body {
     --light_green: #2ecc71;
     --green: #27ae60;
     
+    color: var(--secondary_color);
     background-color: var(--main_color);
     transition: background-color 0.5s ease;
 
@@ -61,19 +62,6 @@ body {
 main {
     display: flex;
     align-items: center;
-}
-#renderer {
-    border: 1px solid var(--secondary_color);
-    margin-right: 5%;
-    margin-left: 15%;
-    height: 70vh;
-    width: 80%;
-
-    cursor: grab;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: right;
 }
 .icon {
     margin: 5px 10px;
@@ -121,6 +109,14 @@ nav ul {
     padding-left: 0;
     list-style-type: none;
 }
+#nav_div {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    height: 100vh;
+}
 @media (prefers-color-scheme: dark) {
     body {
         --main_color: var(--midnight_blue);
@@ -128,7 +124,7 @@ nav ul {
     }
 }
 @media (orientation: portrait) {
-    h1 {
+    #title {
         margin-bottom: 3vh;
     }
     .rect {
@@ -165,10 +161,6 @@ nav ul {
     }
     .icon {
         margin: 2px 20px;
-    }
-    #renderer {
-        margin-left: 5%;
-        width: 95%;
     }
     .tooltip {
         left: 5vw;

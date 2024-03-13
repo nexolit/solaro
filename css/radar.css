@@ -1,0 +1,19 @@
+#renderer {
+    border: 1px solid var(--secondary_color);
+    margin-right: 5%;
+    margin-left: 15%;
+    height: 70vh;
+    width: 80%;
+
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+@media (orientation: portrait) {
+    #renderer {
+        margin-left: 5%;
+        width: 95%;
+    }
+}
