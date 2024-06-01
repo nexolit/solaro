@@ -20,12 +20,17 @@
     left: 10%;
     background-color: var(--light_blue);
 }
-.light_green {
+
+.yellow {
     left: 20%;
+    background-color: var(--starry_yellow);
+}
+.light_green {
+    left: 30%;
     background-color: var(--light_green);
 }
 .green {
-    left: 30%;
+    left: 40%;
     background-color: var(--green);
 }
 #switch {
@@ -48,6 +53,7 @@ body {
     
     --light_blue: #3498db;
     --blue: #2980b9;
+    --starry_yellow: #ffdd55ff;
     --midnight_blue: #000420;
     --light_green: #2ecc71;
     --green: #27ae60;
@@ -137,11 +143,14 @@ nav ul {
     .light_blue {
         left: -30%;
     }
-    .light_green {
+    .yellow {
         left: -10%;
     }
-    .green {
+    .light_green {
         left: 10%;
+    }
+    .green {
+        left: 30%;
     }
     nav {
         margin-left: 10%;
