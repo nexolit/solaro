@@ -15,11 +15,6 @@ darkMode.addEventListener('change', function (e) {
 })
 
 const switchButton = document.getElementById("switch")
-if (darkModeEnabled) {
-    switchButton.src = "images/sun.svg"
-} else {
-    switchButton.src = "images/moon.svg"
-}
 switchButton.addEventListener('click', function () {
     wasClicked = true
     switchMode()
@@ -33,11 +28,9 @@ if (localStorage.getItem("theme") == "dark" && !darkModeEnabled) {
 
 function switchMode() {
     if (!darkModeEnabled) {
-        switchButton.src = "images/sun.svg"
         darkModeEnabled = true
         localStorage.setItem("theme", "dark")
     } else {
-        switchButton.src = "images/moon.svg"
         darkModeEnabled = false
         localStorage.setItem("theme", "light")
     }
