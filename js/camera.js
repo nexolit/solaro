@@ -4,14 +4,17 @@ export default class Camera {
     renderer
     camera
     scene
+    onAnimateCallBack
 
-    constructor(renderer, camera, scene) {
+    constructor(renderer, camera, scene, onAnimateCallBack) {
         this.renderer = renderer
         this.camera = camera
         this.scene = scene
+        this.onAnimateCallBack = onAnimateCallBack
 
         // Bind the animate method to the current instance
         this.animate = this.animate.bind(this)
+        this.onAnimateCallBack = this.onAnimateCallBack.bind(this)
 
         // Add event listeners for mouse and touch interactions
         renderer.domElement.addEventListener('mousedown', Controls.onMouseDown)
@@ -26,15 +29,16 @@ export default class Camera {
         // Set up the camera position and rendering
         camera.position.z = Controls.currentZoom
 
-        this.animate(this.renderer, this.scene, this.camera)
+        this.animate()
     }
 
     render() {
         this.renderer.render(this.scene, this.camera)
     }
-    
+
     animate() {
         requestAnimationFrame(this.animate)
+        this.onAnimateCallBack()
         this.render()
     }
 }
