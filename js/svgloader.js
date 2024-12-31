@@ -45,7 +45,7 @@ function load_svg(src, scale) {
             max.z / 1.68
         )
 
-        let layer_order = 0;
+        let layer_order = 0
         // Set the center for each shape's geometry
         paths.forEach((path) => {
             const material = new THREE.MeshBasicMaterial({
@@ -66,7 +66,7 @@ function load_svg(src, scale) {
 
                 // Create mesh and add it to the group
                 const mesh = new THREE.Mesh(geometry, material)
-                mesh.renderOrder = layer_order++;
+                mesh.renderOrder = layer_order++
                 mesh_group.add(mesh)
             })
 
@@ -75,21 +75,21 @@ function load_svg(src, scale) {
                 color: path.userData.style.stroke || 0x000000, // Stroke color
                 side: THREE.DoubleSide,
                 depthWrite: false
-            });
+            })
 
             path.subPaths.forEach((subPath) => {
-                const strokePoints = subPath.getPoints();
-                const geometry = new THREE.BufferGeometry().setFromPoints(strokePoints);
+                const strokePoints = subPath.getPoints()
+                const geometry = new THREE.BufferGeometry().setFromPoints(strokePoints)
 
                 // Same transform change
                 geometry.translate(-center.x, -center.y, 0) // Center it at (0, 0)
                 geometry.scale(scale, scale, scale)        // Normalize size
                 geometry.rotateZ(Math.PI) // Rotate it 90 degrees 
 
-                const line = new THREE.Line(geometry, strokeMaterial);
-                line.renderOrder = layer_order++;
-                mesh_group.add(line);
-            });
+                const line = new THREE.Line(geometry, strokeMaterial)
+                line.renderOrder = layer_order++
+                mesh_group.add(line)
+            })
         })
     })
 

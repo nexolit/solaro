@@ -25,7 +25,7 @@ if(webGLEnabled) {
 
 function loop() {
     if(drone != undefined) {
-        drone.rotation.z += 0.05; // Rotate around Z-axis
+        drone.rotation.z += 0.05 // Rotate around Z-axis
     }
 }
 
@@ -60,4 +60,3 @@ function drawGrid() {
 
     scene.add(grid)
 }
-//TODO: Resizing
