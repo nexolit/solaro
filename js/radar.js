@@ -4,23 +4,24 @@ import { renderer, camera, scene, webGLEnabled } from './canvas'
 import './theme'
 import { load_svg } from './svgloader'
 import Camera from './camera'
+import FirebaseConnection from './database'
 
 export let mainCamera = undefined
+export const database = new FirebaseConnection()
+
 let drone
 let robot
 
 if(webGLEnabled) {
     mainCamera = new Camera(renderer, camera, scene, loop)
-
     drawGrid()
-    fetchData()
+    database.loadData(onDataRefresh)
+
     drone = load_svg('icons/drone.svg', 0.1)
     drone.position.set(-1, 1, 0)
     robot = load_svg('icons/robot.svg', 0.01)
     robot.position.set(4, 6, 0)
 }
-
-console.log(drone)
 
 function loop() {
     if(drone != undefined) {
@@ -28,28 +29,23 @@ function loop() {
     }
 }
 
+let lines = undefined
 //Fetch the data and do a for loop
-function fetchData() {
+function onDataRefresh(positions) {
     let points = []
-    points.push(addPoint(0, -2))
-    points.push(addPoint(1, 2))
-    points.push(addPoint(0, 3))
-    points.push(addPoint(0, 5))
-    points.push(addPoint(1, 6))
-    points.push(addPoint(1, 10))
-    points.push(addPoint(5, 10))
-    points.push(addPoint(6, 8))
-    points.push(addPoint(6, -2))
-    points.push(addPoint(0, -2))
+    for(let i = 0; i < positions.X.length; i++) {
+        points.push(addPoint(positions.X[i], positions.Y[i]))
+    }
 
     const material = new THREE.MeshBasicMaterial({color: 0x00ff00})
     const geometry = new THREE.BufferGeometry().setFromPoints(points)
-    const lines = new THREE.Line(geometry, material)
+    scene.remove(lines)
+    lines = new THREE.Line(geometry, material)
     scene.add(lines)
 }
 
 function addPoint(x, y) {
-    //Draw an image a dot
+    // Make a point from two coordinates 
     return new THREE.Vector2(x, y)
 }
 
@@ -64,3 +60,4 @@ function drawGrid() {
 
     scene.add(grid)
 }
+//TODO: Resizing
