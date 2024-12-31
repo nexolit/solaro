@@ -6,7 +6,7 @@ let renderer, scene, camera = undefined
 let webGLEnabled = false
 
 if (WebGL.isWebGLAvailable() && container != null) {
-    renderer = new THREE.WebGLRenderer()
+    renderer = new THREE.WebGLRenderer({antialias: true})
     container.appendChild(renderer.domElement)
 	webGLEnabled = true
 
@@ -19,7 +19,17 @@ if (WebGL.isWebGLAvailable() && container != null) {
 
     scene.background = new THREE.Color(getComputedStyle(document.body).getPropertyValue("--main_color"))
     renderer.setSize(width, height)
-    renderer.setPixelRatio(window.devicePixelRatio)    
+    renderer.setPixelRatio(window.devicePixelRatio)
+    
+    window.addEventListener('resize', () => {
+        const computedStyle = getComputedStyle(container)
+        const width = parseInt(computedStyle.width)
+        const height = parseInt(computedStyle.height)
+
+        camera.aspect = width / height
+        camera.updateProjectionMatrix()
+        renderer.setSize(width, height)
+    })
 } else if(container != null) {
 	const warning = WebGL.getWebGLErrorMessage()
 	container.appendChild(warning)
