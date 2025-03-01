@@ -14,13 +14,11 @@ let robot
 
 if(webGLEnabled) {
     mainCamera = new Camera(renderer, camera, scene, loop)
-    drawGrid()
-    database.loadData(onDataRefresh)
-
     drone = load_svg('icons/drone.svg', 0.1)
-    drone.position.set(-1, 1, 0)
     robot = load_svg('icons/robot.svg', 0.01)
-    robot.position.set(4, 6, 0)
+    drawGrid()
+
+    database.loadData(onDataRefresh)
 }
 
 function loop() {
@@ -31,10 +29,13 @@ function loop() {
 
 let lines = undefined
 //Fetch the data and do a for loop
-function onDataRefresh(positions) {
+function onDataRefresh(position_data) {
+    const drone_position = position_data.drone
+    const robot_position = position_data.robot
+
     let points = []
-    for(let i = 0; i < positions.X.length; i++) {
-        points.push(addPoint(positions.X[i], positions.Y[i]))
+    for(let i = 0; i < position_data.X.length; i++) {
+        points.push(addPoint(position_data.X[i], position_data.Y[i]))
     }
 
     const material = new THREE.MeshBasicMaterial({color: 0x00ff00})
@@ -42,6 +43,9 @@ function onDataRefresh(positions) {
     scene.remove(lines)
     lines = new THREE.Line(geometry, material)
     scene.add(lines)
+
+    drone.position.set(drone_position.X, drone_position.Y, 0)
+    robot.position.set(robot_position.X, robot_position.Y, 0)
 }
 
 function addPoint(x, y) {
