@@ -1,4 +1,15 @@
-main h1 {
-    margin: auto;
-    text-align: center;
+table, td {
+    border: 1px solid gray;
+    border-radius: 8px;
+    border-spacing: 2vh;
+    background-color: #ffffff7a;
+    width: 60%;
+    height: 20vh;
+}
+
+@media (orientation: portrait) {
+    table, td {
+        width: 80%;
+        height: 10vh;
+    }
 }

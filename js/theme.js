@@ -30,9 +30,17 @@ function switchMode() {
     if (!darkModeEnabled) {
         darkModeEnabled = true
         localStorage.setItem("theme", "dark")
+
+        if(document.querySelector("table") != null) {
+            document.querySelector("table").style.setProperty("background-color", "#0000007a")
+        }
     } else {
         darkModeEnabled = false
         localStorage.setItem("theme", "light")
+
+        if(document.querySelector("table") != null) {
+            document.querySelector("table").style.setProperty("background-color", "#ffffff7a")
+        }
     }
 
     if (wasClicked || wasLoaded) {

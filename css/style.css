@@ -68,6 +68,7 @@ body {
 main {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .icon {
     margin: 5px 10px;
@@ -127,6 +128,9 @@ nav ul {
     body {
         --main_color: var(--midnight_blue);
         --secondary_color: white;
+    }
+    table {
+        background-color: #0000007a !important;
     }
 }
 @media (orientation: portrait) {

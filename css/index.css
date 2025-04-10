@@ -3,7 +3,6 @@
     width: 25%;
 }
 .showcase_img {
-    margin-left: 18vw;
     clip-path: ellipse(65% 90% at 35% 90%);
 
     width: 60vh;
